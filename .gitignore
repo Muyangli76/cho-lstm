@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual env
+.venv/
+venv/
+.env/
+
+# Data (DO NOT PUSH raw/processed files)
+data/
+*.csv
+*.xlsx
+
+# Outputs / models / logs
+output/
+models/
+logs/
+mlruns/
+UQ/
+checkpoints/
+weights/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db

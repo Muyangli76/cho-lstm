@@ -1,0 +1,41 @@
+﻿# I/O & split (keep pairs for 50L replicates)
+SPLIT_STRATEGY: "pairs"
+VAL_FRAC: 0.2
+
+# Core
+SEED: 42
+T_IN: 72
+T_OUT: 24
+BATCH_TR: [32, 48, 64, 80, 96]
+BATCH_EVAL: [128, 192, 256]
+CLIP: [0.5, 1.0, 1.5, 2.0]
+PATIENCE: 8
+
+# Teacher forcing
+TF_START: 1.0
+TF_END: [0.25, 0.33, 0.4, 0.5]
+
+# Architecture
+HIDDEN: [96, 128, 160, 192]
+LAYERS: [1, 2]
+DROPOUT: [0.15, 0.2, 0.25, 0.3, 0.35]
+
+# Physics / losses
+LAMBDA_MB: [0.03, 0.05, 0.08, 0.12]
+GAMMA_RES: [1.0e-6, 5.0e-6, 1.0e-5, 5.0e-5]
+LAMBDA_XAB: 1.0
+LAMBDA_CONS: [0.1, 0.2, 0.3, 0.4]
+
+# Stage schedule
+FREEZE_EPOCHS_HEAD: [2, 3, 4]
+FREEZE_EPOCHS_TOP:  [4, 6, 8]
+POLISH_EPOCHS:      [2, 3, 4]
+LR_STAGE_A: [3.0e-4]
+LR_STAGE_B: [3.0e-4]
+LR_STAGE_C: [5.0e-5]
+
+# UQ head
+HET_XAB: false
+SOFTPLUS_VAR: false
+LOGV_MIN: -6.0
+LOGV_MAX: 2.0
